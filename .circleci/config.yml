@@ -8,6 +8,12 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
+      - run: |
+          sonar-scanner \
+            -Dsonar.projectKey=uzaircotwall_apds7311-poe \
+            -Dsonar.organization=uzaircotwall \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=$SONAR_TOKEN
 
   frontend_test:
     docker:
@@ -17,6 +23,12 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
+      - run: |
+          sonar-scanner \
+            -Dsonar.projectKey=uzaircotwall_apds7311-poe \
+            -Dsonar.organization=uzaircotwall \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=$SONAR_TOKEN
 
 workflows:
   version: 2
