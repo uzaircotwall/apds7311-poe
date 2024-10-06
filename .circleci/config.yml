@@ -1,0 +1,26 @@
+version: 2.1
+jobs:
+  backend_test:
+    docker:
+      - image: circleci/node:14
+    working_directory: ~/backend
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm test
+
+  frontend_test:
+    docker:
+      - image: circleci/node:14
+    working_directory: ~/frontend
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm test
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - backend_test
+      - frontend_test
