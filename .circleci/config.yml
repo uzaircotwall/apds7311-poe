@@ -9,7 +9,9 @@ jobs:
       - run: npm install
       - run: npm test
       - run: |
-          sonar-scanner \
+          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
+          unzip sonar-scanner.zip
+          ./sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner \
             -Dsonar.projectKey=uzaircotwall_apds7311-poe \
             -Dsonar.organization=uzaircotwall \
             -Dsonar.host.url=https://sonarcloud.io \
@@ -24,7 +26,9 @@ jobs:
       - run: npm install
       - run: npm test
       - run: |
-          sonar-scanner \
+          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
+          unzip sonar-scanner.zip
+          ./sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner \
             -Dsonar.projectKey=uzaircotwall_apds7311-poe \
             -Dsonar.organization=uzaircotwall \
             -Dsonar.host.url=https://sonarcloud.io \
