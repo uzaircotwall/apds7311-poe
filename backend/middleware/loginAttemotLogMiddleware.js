@@ -9,8 +9,8 @@ const logInAttemptLogger = async (req, res, next) => {
         const ipAddres = req.id || req.connection.remoteAddress;
         const successfulLogin = !data.message || data.message !== 'Invalid ceredentials';
 
-        LoginAttempt.create({username, ipAddress, successfulLogin})
-        .catch(err => console.error('Error logging login attempt:',err));
+       // LoginAttempt.create({username, ipAddress, successfulLogin})
+       // .catch(err => console.error('Error logging login attempt:',err));
 
         originalJson.call(this, data);
     };

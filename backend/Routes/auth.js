@@ -12,7 +12,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 //Base Route
 router.get("/",(req,res) => {
-    res.send("HELLO AUTH");
+    res.send("HELLO  WELCOME TO CUSTOMER PAYMENT PORTAL");
 });
 
 //Register

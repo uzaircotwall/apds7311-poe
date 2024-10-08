@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 
 
 
-const postShcema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
     title:{
         type: String,
         required: true,
@@ -22,20 +22,21 @@ const postShcema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 5,
-        maxlength: 2000
+        maxlength: 2000,
     },
     category: {
         type: String,
         required: true,
-        enum: ['Mastercard','VISA','Apple Pay','EFT'],
-        default: 'Pending'
+        enum: ['Mastercard','VISA','Apple Pay','EFT','Pending'],
+        default: "Pending",
     },
     createdAT: {
       type: Date,
       default: Date.now,
       imutable: true,
     }
-})
+});
+const Post = mongoose.model('Post', postSchema);
 
 
-//export default Post
+export default Post;
